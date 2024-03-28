@@ -1,0 +1,63 @@
+---
+title: "10-2 Problem Set for Roots and Optima"
+author: "Clay Wright"
+format: pdf
+header-includes:
+   - \usepackage{mhchem}
+---
+
+## 1: Cheatsheet 
+Write a 1/2 page cheatsheet on Roots and Optima, including how to identify whether a problem is root or optima, and your approach to solving.
+
+## 2: Chemical equilibrium
+
+A reversible reaction proceeds by the following reaction equation:
+
+$$\ce{2A + B <=> C}$$
+
+The equilibrium between the forward and reverse reactions can be characterized by the equilibrium relationship:
+
+$$K = \frac{C_C}{C_A^2 C_B}$$
+where $C_I$ represents concentration of species $I$ (A, B, or C in the equation above). If we denote a variable $x$ as representing the number of moles of C that are produced at equilibrium, the equilibrium equation becomes:
+
+$$K = \frac{C_{C0} + x}{(C_{A0} - 2x)^2 (C_{B0} - x)}$$
+
+where the subscript $0$ represents the initial concentration of each constituent. Assuming the following, find the value of $x$:
+
+$$K = 0.016; C_{A0} = 41; C_{B0} = 28; C_{C0} = 4$$
+ 
+In your solution, enter the equation as a function using generic notation (e.g. similar to the first example in class on Monday, where g, t, and Cd were in the function).
+
+```{r}
+
+```
+
+
+## 3: Trig functions
+
+Solve the roots problem using `uniroot.all` to find all the roots between -1 and 3 for the following equation:
+
+$$f(x) = sin(x^2) + x^2 - 2x - 0.09$$ 
+
+## 4: Water level map 
+Topographic maps are used to portray the elevation of the land surface. Similar to these maps, there are “water level” maps of what we call groundwater. The “water table” (not really flat) is the elevational surface of water under the ground, and is an important component of the hydrologic or water cycle. Scientists and engineers use wells and water level measurements to describe water level, and sometimes use interpolation approaches to model the water table surface. Imagine you are given the following equation for the water level surface based on Cartesian coordinates:
+
+$$
+h(x,y) = \frac{1}{1 + x^2 + y^2 + x + xy}
+$$
+
+where $h$ is the water level elevation. Create a mesh and contour plot based on the given equation, and find the global maximum.
+
+![A very simple example of a water level map](figures/assignment_Fig1.png)
+
+## 5: Plant cost minimization
+
+Unit Operations is a class many of you will take next year, and this example draws from this class. A compound $A$ (sugar) will be converted to $B$ (fermented drink) in a stirred tank reactor. The product $B$ and unreacted $A$ are purified in a separation unit. Unreacted $A$ is recycled back to the reactor. A process engineer has found that the initial cost of the system is a function of the conversion $x_a$, according to the equation below. Find the conversion that will result in the lowest cost system. $C$ is a proportionality constant. 
+
+$$
+Cost = C \left[ \left( \frac{1}{1-x_a^2} \right) ^{0.6} +    
+  6 \left( \frac{1}{x_a} \right) ^{0.6} \right]
+$$
+
+![Flow diagram of reactor and separation unit](figures/assignment_Fig2.png)
+
