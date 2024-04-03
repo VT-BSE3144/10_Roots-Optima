@@ -156,7 +156,9 @@ ggplot(d,aes(x,fx)) + geom_line()
 ```{r}
 uniroot(f, c(3,6))
 
-uniroot.all(f, c(3,6)) -> roots
+# uniroot.all is in the rootSolve package
+library(rootSolve)
+rootSolve::uniroot.all(f, c(3,6)) -> roots
 
 ```
 
@@ -338,7 +340,7 @@ fig
 
 Try hovering over the plot to find a good guess for the minimum.
 
-We will need this starting value for the `fminsearch` function. You'll also have to rewrite the function as below where `x[1]` is `x`, and `x[2]` is `y`. This helps the code run more efficiently by passing a single `x` object with 2 values, instead of 2 objects `x` and `y`. Then use `fminsearch`, where `x0` is the starting value for the search. If we wanted to find the maximum, set `maximum=TRUE`. 
+We will need this starting value for the `fminsearch` function. You'll also have to rewrite the function as below where `x[1]` is `x`, and `x[2]` is `y`. This helps the code run more efficiently by passing a single `x` object with 2 values, instead of 2 objects `x` and `y`. Then use `fminsearch`, where `x0` is the starting value for the search. If we wanted to find the maximum, set `minimize=FALSE`. 
 
 #### Write function
 

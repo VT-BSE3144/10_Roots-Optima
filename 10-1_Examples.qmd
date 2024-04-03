@@ -43,3 +43,63 @@ As a Biological Systems Engineer, imagine you are asked to design a trapezoidal 
 
 ![Diagram of a trapezoidal channel and descriptive equations](figures/assignment_Fig3.png)
 
+$$P = a + 2 \sqrt{\left(\frac{b-a}{2}\right)^2 +h^2}$$
+$$A = \frac{1}{2} \left(a + b \right) h$$
+$$50 = \frac{1}{2} \left(a + b \right) h$$
+Solve for h. 
+$$h = \frac{100}{\left(a + b \right)}$$
+
+Plug into perimeter function.
+
+$$P = a + 2 \sqrt{\left(\frac{b-a}{2}\right)^2 +\left( \frac{100}{\left(a + b \right)} \right)^2}$$
+#### Plot equation 
+```{r}
+
+library(plotly)
+library(pracma)
+
+a <- seq(1,50,0.1) # define range in a values
+b <- seq(1,50,0.1) # define range in y values
+ab <- pracma::meshgrid(a,b) # create grid of x,y pairs to evaluate
+# NOTE: meshgrid takes two vectors and makes a matrix of all pairs of these values and renames these values X and Y
+P <-  ab$X + 2 * sqrt(((ab$Y-ab$X)/2)^2 +(100/(ab$X + ab$Y))^2)
+# use grid to create Z values (3rd dimension)
+```
+
+
+```{r}
+fig <- plot_ly(z = P, x = a, y = b, type = "contour", contours = list(
+    start = 0,
+    end = 50,
+    size = 0.1
+  ))
+fig
+
+ # another option is a heatmap
+fig <- plot_ly(z = P,  x = a, y = b, type = "heatmap")
+fig
+# we can also add labels to the contour
+fig <- plot_ly(z = P,  x = a, y = b, type = "contour", contours = list(showlabels = TRUE))
+fig
+
+```
+
+#### Write function
+
+```{r}
+P_func <- function(ab){ 
+  ab[1] + 2 * sqrt(((ab[2]-ab[1])/2)^2 +(100/(ab[1] + ab[2]))^2)
+  }
+
+P_func(ab = c(5,10))
+```
+
+#### Find optimum
+
+```{r}
+range_X <- c(5, 10)
+range_Y <- c(10, 15)
+fminsearch(fn = P_func, x0 = c(7, 13))
+
+```
+
