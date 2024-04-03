@@ -17,6 +17,8 @@ Read and/or watch:
  - Read https://en.wikipedia.org/wiki/Newton%27s_method (through Description section) and https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization (through Geometric interpretation section)
  - Watch <https://www.youtube.com/watch?v=lBfqvBJaFmc> first 10 min.
  
+![From: <http://mathhasproblems.weebly.com/polynomial-functions.html>](figures/roots-vs-optima.png)
+ 
 Then review the following examples in R. 
 
 ## Roots

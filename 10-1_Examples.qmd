@@ -12,8 +12,34 @@ $$c_p = 0.99302 + 1.672 \times 10^{-4}T + 9.7216 \times 10^{-8}T^2 - 9.5837 \tim
 
 Make a plot of $c_p$ versus temperature from $T = 0$ to 1200 K. Then, find the temperature that corresponds to a $c_p$  of 1.1 kJ/(kg K).
 
+```{r specific-heat-plot}
+# define our variables
+A_0 <- 0.99302
+A_1 <- 1.672E-4
+A_2 <- 9.7216E-8
+A_3 <- -9.5837E-11
+A_4 <- 1.9320E-14
+
+T_range <- seq(0,1200, by = 1)
+
+c_p0 <- 1.1
+
+# define our function
+c_p <- function(T_K, A_0, A_1, A_2, A_3, A_4, c_p0){
+  A_0 + A_1 * T_K + A_2 * T_K^2 + A_3 * T_K^3 + A_4 * T_K^4 - c_p0
+}
+
+plot(T_range, c_p(T_K = T_range, A_0 = A_0, A_1 = A_1, A_2 = A_2, A_3 = A_3, A_4 = A_4, c_p0 = 1.1))
+```
+
+```{r cp-root}
+uniroot(f = c_p, interval = c(0, 1200), A_0 = A_0, A_1 = A_1, A_2 = A_2, A_3 = A_3, A_4 = A_4, c_p0 = c_p0)
+```
+
+
 ## Channel perimeter
 
 As a Biological Systems Engineer, imagine you are asked to design a trapezoidal channel to carry irrigation water. Determine the optimal dimensions to minimize the wetted perimeter for a cross-sectional area of 50 m^2^.
 
 ![Diagram of a trapezoidal channel and descriptive equations](figures/assignment_Fig3.png)
+
