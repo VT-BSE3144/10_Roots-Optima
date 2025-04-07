@@ -1,11 +1,10 @@
 ---
-title: "Week 10: Roots and Optima Intro"
-author: "Clay Wright"
-format: 
-  html:
-    toc: true
-    toc-level: 5
+output: html_document
+params:
+  version: 1.0
 ---
+
+# Roots and Optima Introduction
 
 This week our goals are to be able to:
  - Identify problem statements that are asking to identify roots or optima of equations.

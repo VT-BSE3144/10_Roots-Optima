@@ -1,8 +1,10 @@
 ---
-title: "10-1 Examples of Root- and Optima-finding Problems"
-author: "Clay Wright"
-format: html
+output: html_document
+params:
+  version: 1.0
 ---
+
+# Roots and Optima Examples {.unnumbered}
 
 ## Specific heat
 
