@@ -1,7 +1,7 @@
 ---
 output: html_document
 params:
-  version: 1.0
+  version: 1.1
 ---
 
 # Roots and Optima Examples {.unnumbered}
