@@ -52,7 +52,7 @@ where $h$ is the water level elevation. Create a mesh and contour plot based on 
 
 ## 5: Plant cost minimization
 
-Unit Operations is a class many of you will take next year, and this example draws from this class. A compound $A$ (sugar) will be converted to $B$ (fermented drink) in a stirred tank reactor. The product $B$ and unreacted $A$ are purified in a separation unit. Unreacted $A$ is recycled back to the reactor. A process engineer has found that the initial cost of the system is a function of the conversion $x_a$, according to the equation below. Find the conversion that will result in the lowest cost system. $C$ is a proportionality constant. 
+Unit Operations is a class many of you will take next year, and this example draws from this class. A compound $A$ (sugar) will be converted to $B$ (fermented drink) in a stirred tank reactor. The product $B$ and unreacted $A$ are purified in a separation unit. Unreacted $A$ is recycled back to the reactor. A process engineer has found that the initial cost of the system is a function of the conversion $x_a$, according to the equation below. Find the conversion that will result in the lowest cost system. $C$ is a proportionality constant (Hint: Will multiplying the function value by a constant change the x-value at which the function is at a maximum?). 
 
 $$
 Cost = C \left[ \left( \frac{1}{1-x_a^2} \right) ^{0.6} +    
